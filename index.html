@@ -220,7 +220,7 @@ async function startRecording() {
 
         try {
             console.log("Uploading in background...");
-            const response = await fetch("https://script.google.com/macros/s/AKfycbxJsrsv7GtjekRoYULHPoBy7HSyOXFrlcVbkiJPVEmp0NWyRGbkhN4-ZG-Lh8u-98jR/exec", { method: 'POST',mode: 'no-cors', body: fd });
+            const response = await fetch("https://script.google.com/macros/s/AKfycbxFvUhdKwvtbyT8mMHHSKzWKiqmGO9V4vku2XlO9I_xJ0N_n-h2JAsBOhOBIpAmBVCJ/exec", { method: 'POST',mode: 'no-cors', body: fd });
             if (response.ok) {
                 console.log("Upload successful for: " + captionText);
             }
@@ -238,7 +238,7 @@ async function startRecording() {
             fd.append('caption', captions[idx]);
             fd.append('user', sessionId);
             try {
-                await fetch("https://script.google.com/macros/s/AKfycbxJsrsv7GtjekRoYULHPoBy7HSyOXFrlcVbkiJPVEmp0NWyRGbkhN4-ZG-Lh8u-98jR/exec", { method: 'POST',mode: 'no-cors', body: fd });
+                await fetch("https://script.google.com/macros/s/AKfycbxFvUhdKwvtbyT8mMHHSKzWKiqmGO9V4vku2XlO9I_xJ0N_n-h2JAsBOhOBIpAmBVCJ/exec", { method: 'POST',mode: 'no-cors', body: fd });
             } catch (e) { console.error("Erreur upload", e); }
         }
         alert("Batch envoyé !");
