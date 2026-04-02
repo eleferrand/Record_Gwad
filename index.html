@@ -220,7 +220,7 @@ async function startRecording() {
 
         try {
             console.log("Uploading in background...");
-            const response = await fetch("https://script.google.com/macros/s/AKfycbxFvUhdKwvtbyT8mMHHSKzWKiqmGO9V4vku2XlO9I_xJ0N_n-h2JAsBOhOBIpAmBVCJ/exec", { method: 'POST',mode: 'no-cors', body: fd });
+            const response = await fetch("https://script.google.com/macros/s/AKfycbxFZ9_5lEY85CLKko5uwjalkwo6m7Pw88wW7cqsvlLnXaYb6PQWvflK8FpcNkeS9t5Osg/exec", { method: 'POST',mode: 'no-cors', body: fd });
             if (response.ok) {
                 console.log("Upload successful for: " + captionText);
             }
@@ -228,21 +228,6 @@ async function startRecording() {
             console.error("Background upload failed:", e);
             // Optional: you could save failed uploads to a 'retry' list here
         }
-    }
-    // --- 5. UPLOAD (Vers ton script Google) ---
-    async function uploadBatch() {
-        document.getElementById('status').innerText = "Envoi en cours...";
-        for (let [idx, b64] of batch) {
-            const fd = new URLSearchParams();
-            fd.append('base64', b64);
-            fd.append('caption', captions[idx]);
-            fd.append('user', sessionId);
-            try {
-                await fetch("https://script.google.com/macros/s/AKfycbxFvUhdKwvtbyT8mMHHSKzWKiqmGO9V4vku2XlO9I_xJ0N_n-h2JAsBOhOBIpAmBVCJ/exec", { method: 'POST',mode: 'no-cors', body: fd });
-            } catch (e) { console.error("Erreur upload", e); }
-        }
-        alert("Batch envoyé !");
-        batch.clear();
     }
 </script>
 </body>
