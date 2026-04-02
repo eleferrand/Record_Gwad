@@ -10,10 +10,29 @@
         .controls { margin-top: 15px; }
         button { padding: 10px 15px; margin: 5px; cursor: pointer; }
         audio { display: block; margin: 10px auto; width: 100%; }
-    </style>
-</head>
+        .page-title {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #2c3e50;
+        
+        /* This creates the gap you're looking for */
+        margin-top: 50px;    
+        margin-bottom: 40px; 
+        
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* Optional: Ensure the container is centered below it */
+    .container {
+        margin: 0 auto;
+    }
+</style>
+
 <body>
 
+<h1 class="page-title">Créole de Guadeloupe</h1>
 <div class="container">
     <h2 id="caption-display">Loading...</h2>
     <canvas id="visualizer"></canvas>
